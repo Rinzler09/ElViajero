@@ -1,9 +1,9 @@
 <?php
 
 class conexion{
-    private $servidor="localhost";
-    private $usuario="root";
-    private $password="";
+    private $servidor="elviajero.ddns.net";
+    private $usuario="admin";
+    private $password="Temporal1";
     private $db="viajerodb";
     private $con;
     private $msj;
