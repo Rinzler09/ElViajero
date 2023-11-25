@@ -28,7 +28,7 @@ if($_POST)
     $_SESSION['passw'] = $passw;
     $_SESSION['nombre'] = $resultado[0]['nombre'];
     $_SESSION['estado'] = '1';
-    header("Location: /proyecto/menu.php");
+    header("Location: /ElViajero/menu.php");
   }
   else
   {
