@@ -1,9 +1,9 @@
 <?php
 
 class conexion{
-    private $servidor="localhost";
-    private $usuario="root";
-    private $password="";
+    private $servidor="elviajero.ddns.net";
+    private $usuario="admin";
+    private $password="Temporal1";
     private $db="viajerodb";
     private $con;
     private $msj;
@@ -14,18 +14,32 @@ class conexion{
             $this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
         catch(PDOException $e){
-            return "Error de conexion " . $e;
+           /*  return "Error de conexion " . $e; */
+           throw new Exception("Error de conexion: " . $e->getMessage());
         }
         
     }
     public function probar($query){
-        $this->con->exec($query);
-        return $this->con->lastInsertId();
+        try {
+            $this->con->exec($query);
+            return $this->con->lastInsertId();
+        } catch (PDOException $e) {
+            throw new Exception("Error al ejecutar consulta: " . $e->getMessage());
+        }
+        /* $this->con->exec($query);
+        return $this->con->lastInsertId(); */
     }
     public function consulta($query){
-        $sentencia = $this->con->prepare($query);
+        try {
+            $sentencia = $this->con->prepare($query);
+            $sentencia->execute();
+            return $sentencia->fetchAll();
+        } catch (PDOException $e) {
+            throw new Exception("Error al realizar consulta: " . $e->getMessage());
+        }
+        /* $sentencia = $this->con->prepare($query);
         $sentencia->execute();
-        return $sentencia->fetchAll();
+        return $sentencia->fetchAll(); */
     }
 
 }
