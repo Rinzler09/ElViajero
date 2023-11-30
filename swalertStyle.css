@@ -1,0 +1,57 @@
+.swal-hight {
+  height: 373px !important;
+  width: 350px !important;
+}
+
+#pass {
+  width: 90%;
+  height: 20%;
+  border: 5px solid #ECEDED;
+}
+
+#conectar {
+  background-color: #183BC1;
+  color: white;
+}
+
+.preloader {
+  display: inline-block;
+  padding: 40px;
+  border-radius: 50%;
+  animation: rotate 0.7s linear infinite;
+  background: linear-gradient(90deg, #F5F3F5 0%, #183BC1 53%);
+  overflow-y: hidden;
+}
+
+  .preloader::after {
+    content: " ";
+    background: #F5F3F5;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    border-radius: 50%;
+    margin: 2px;
+    overflow-y: hidden;
+  }
+
+
+#contar {
+  font-size: 36px;
+  position: absolute;
+  left: 43.5%;
+  top: 40%;
+  z-index: 100;
+}
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

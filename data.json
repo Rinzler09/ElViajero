@@ -1,0 +1,17 @@
+[
+            {
+                "producto":"Cabeza de Lomo",
+                "cantidad":"100.00",
+                "precio":"L 70.00",
+                "subtotal":"L 7000.00",
+                "isv":"L 1050.00",
+                "total":"L 8050.00"},
+            
+            {
+                "producto":"Fielte de res",
+                "cantidad":"100.00",
+                "precio":"L 50.00",
+                "subtotal":"L 5000.00",
+                "isv":"L 750.00",
+                "total":"L 5750.00"}
+        ]
