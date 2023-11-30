@@ -16,7 +16,6 @@
     
     $resultado = $con->consulta($sql);
     $nomApe="";
-
     if(count($resultado) > 0)
     {
         foreach($resultado as $registro){
@@ -65,7 +64,6 @@
         }
 
     }
-    
 
 ?>
 
@@ -90,9 +88,9 @@
                     <div class="btn-hamburger"></div>
                 </div>
             </div>
-           
+
             <div id="profile">
-                <div id="photo"><img style="background-color: white;" id="mifoto" src="<?php echo $imagen; ?>" alt=""></div>           
+                <div id="photo"><img style="background-color: white;" id="mifoto" src="<?php echo $imagen; ?>" alt=""></div>
 
                 <div id="name"><span><?php echo $nomApe; ?></span></div>
                 <a href="index.php"><div class="icon"><i class="fas fa-home"></i></div></a>
