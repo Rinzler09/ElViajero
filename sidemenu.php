@@ -137,13 +137,12 @@
                         </a>
                     </div>
 
-                    <!-- <div class="subitem">
-                        <a href="proveedores.php">         
+                    <div class="subitem">
+                        <a href="tviajes.php">         
                             <div class="icon"><i class="fas fa-truck"></i></div>             
-                            <div class="title"><span>Administrar Proveedores</span></div>                    
+                            <div class="title"><span>Administrar Tipo de Viajes</span></div>                    
                         </a>
-                    </div> -->
-                    
+                    </div>                     
                 </div>
 
                 <div class="item separator" style=" <?php if(isset($maestros) && $maestros != '1') echo "display: none"; ?>">
