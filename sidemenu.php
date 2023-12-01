@@ -131,7 +131,7 @@
                     </div>
 
                     <div class="subitem">
-                        <a href="Productos.php">    
+                        <a href="aerolinea.php">    
                             <div class="icon"><i class="fas fa-plane"></i></div>                                                            
                             <div class="title"><span>Administrar Viajes</span></div>                    
                         </a>
