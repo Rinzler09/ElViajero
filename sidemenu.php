@@ -133,7 +133,7 @@
                     <div class="subitem">
                         <a href="aerolinea.php">    
                             <div class="icon"><i class="fas fa-plane"></i></div>                                                            
-                            <div class="title"><span>Administrar Viajes</span></div>                    
+                            <div class="title"><span>Administrar Aerolinea</span></div>                    
                         </a>
                     </div>
 
@@ -142,7 +142,14 @@
                             <div class="icon"><i class="fas fa-truck"></i></div>             
                             <div class="title"><span>Administrar Tipo de Viajes</span></div>                    
                         </a>
-                    </div>                     
+                    </div>
+                    
+                    <div class="subitem">
+                        <a href="destinos.php">         
+                            <div class="icon"><i class="fas fa-map"></i></div>             
+                            <div class="title"><span>Administrar Destinos</span></div>                    
+                        </a>
+                    </div>    
                 </div>
 
                 <div class="item separator" style=" <?php if(isset($maestros) && $maestros != '1') echo "display: none"; ?>">
