@@ -109,12 +109,12 @@
                         <div class="title"><span>Datos Maestros</span></div>
                     </a>
                     
-                    <div class="subitem">
+                    <!-- <div class="subitem">
                         <a href="CategoriaProducto.php">  
                             <div class="icon"><i class="fas fa-box"></i></div>                      
                             <div class="title"><span>Admimistrar Categorías de Productos</span></div>                    
                         </a>
-                    </div>
+                    </div> -->
 
                     <div class="subitem">
                         <a href="Clientes.php">     
@@ -132,17 +132,17 @@
 
                     <div class="subitem">
                         <a href="Productos.php">    
-                            <div class="icon"><i class="fas fa-apple-alt"></i></div>                                                            
-                            <div class="title"><span>Administrar Productos</span></div>                    
+                            <div class="icon"><i class="fas fa-plane"></i></div>                                                            
+                            <div class="title"><span>Administrar Viajes</span></div>                    
                         </a>
                     </div>
 
-                    <div class="subitem">
+                    <!-- <div class="subitem">
                         <a href="proveedores.php">         
                             <div class="icon"><i class="fas fa-truck"></i></div>             
                             <div class="title"><span>Administrar Proveedores</span></div>                    
                         </a>
-                    </div>
+                    </div> -->
                     
                 </div>
 
@@ -156,12 +156,12 @@
                         <div class="title"><span>Transacciones</span></div>
                     </a>
 
-                    <div class="subitem">
+                    <!-- <div class="subitem">
                         <a href="compras.php">            
                             <div class="icon"><i class="fas fa-shopping-cart"></i></div>                         
                             <div class="title"><span>Administar Compras</span></div>                    
                         </a>
-                    </div>
+                    </div> -->
 
                     <div class="subitem">
                         <a href="#">         
@@ -189,12 +189,12 @@
                         </a>
                     </div>
 
-                    <div class="subitem">
+                    <!-- <div class="subitem">
                         <a href="#">     
                             <div class="icon"><i class="fas fa-search"></i></div>                                            
                             <div class="title"><span>Consultar Compras</span></div>                    
                         </a>
-                    </div>
+                    </div> -->
 
                     <div class="subitem">
                         <a href="consultaEmpleados.php">     
@@ -206,7 +206,7 @@
                     <div class="subitem">
                         <a href="#">     
                             <div class="icon"><i class="fas fa-search"></i></div>                                            
-                            <div class="title"><span>Consultar Productos</span></div>                    
+                            <div class="title"><span>Consultar Viajes</span></div>                    
                         </a>
                     </div>
 
@@ -240,7 +240,7 @@
                     <div class="subitem">
                         <a href="#">     
                             <div class="icon"><i class="fas fa-chart-bar"></i></div>                                            
-                            <div class="title"><span>Reporte de Compras</span></div>                    
+                            <div class="title"><span>Reporte de Viajes</span></div>                    
                         </a>
                     </div>
 
@@ -254,14 +254,14 @@
                     <div class="subitem">
                         <a href="#">     
                             <div class="icon"><i class="fas fa-chart-bar"></i></div>                                            
-                            <div class="title"><span>Reporte de Productos</span></div>                    
+                            <div class="title"><span>Reporte de Ventas</span></div>                    
                         </a>
                     </div>
 
                     <div class="subitem">
                         <a href="#">     
-                            <div class="icon"><i class="fas fa-chart-bar"></i></div>                                            
-                            <div class="title"><span>Reporte de Ventas</span></div>                    
+                            <div class="icon"><i class="fas fa-chart-line"></i></div>                                            
+                            <div class="title"><span>Graficos</span></div>                    
                         </a>
                     </div>
                 </div>
