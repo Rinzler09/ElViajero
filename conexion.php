@@ -2,9 +2,9 @@
 
 class conexion{
 
-    private $servidor="localhost";
-    private $usuario="root";
-    private $password="";
+    private $servidor="34.125.240.38";
+    private $usuario="admin";
+    private $password="Temporal1";
     private $db="viajerodb";
     private $con;
     private $msj;

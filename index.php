@@ -41,13 +41,14 @@
             <div class="row">
                 
                 <div class="col-md-6">
-                    <img id="logo" src="icons/logo.png" alt="" style="width: 350px; height: 350px; position: absolute; left:270px;">                       
+                    <img id="logo" src="img/favicon.jpg" alt="" style="width: 350px; height: 350px; position: absolute; left:270px;">                       
                 </div>
                 
                 <div class="col-md-6" id="info">
-                    <h1 class="display-3" style="color: black;">Bienvenido</h1>            
-                    <p class="lead" style="color: black;">MegaMarket te da la bienvenida a nuestro sitio oficial
-                    en el que encontraras todo lo relacionado con las operaciones de compra y venta de nuestros productos.</p>
+                    <h1 class="display-3" style="color: black;">Bienvenido a El Viajero</h1>            
+                    <p class="lead" style="color: black;">Descubre el mundo con El Viajero, tu socio confiable para experiencias aéreas y terrestres inolvidables. 
+                    Ofrecemos servicios de reserva de vuelos, emocionantes recorridos terrestres. Nuestro equipo dedicado garantiza atención personalizada para 
+                    hacer de tu viaje una experiencia única. ¡Viaja con nosotros y haz realidad tus sueños!</p>
                     <hr class="my-2">
                     <button class="btn btn-success" type="button">Mas Informacion</button>                
                 </div>
