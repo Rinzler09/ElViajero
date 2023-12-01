@@ -17,8 +17,10 @@
     if(isset($_POST['query']))
     {
         $f = ($_POST['query']);
+        // $sql = "SELECT * FROM clientes
+        // WHERE nombre LIKE '%". $f . "%' OR idcliente LIKE '%". $f . "%' OR  telefono LIKE '%". $f . "%' ";        
         $sql = "SELECT * FROM clientes
-        WHERE nombre LIKE '%". $f . "%' OR idcliente LIKE '%". $f . "%' OR  telefono LIKE '%". $f . "%' ";        
+          WHERE nombre LIKE '%". $f . "%' OR idcliente LIKE '%". $f . "%' OR telefono LIKE '%". $f . "%' OR DNI LIKE '%". $f . "%' ";        
     }
 
     $resultado = $con->consulta($sql);
@@ -32,7 +34,8 @@
         <tr>
             <th>ID</th>
             <th>Cliente</th>            
-            <th>Telefono</th>                   
+            <th>Telefono</th>  
+            <th>DNI</th>                 
             <th>Accion</th>  
         </tr>
     </thead>
@@ -42,6 +45,7 @@
                     <td><?php echo $registro['idcliente']; ?></td>
                     <td><?php echo $registro['nombre']; ?></td>  
                     <td><?php echo $registro['telefono']; ?></td> 
+                    <td><?php echo $registro['DNI']; ?></td> 
                     <td>
                         
                         <a class='add_cliente' href='#' title='Editar' onclick='return modalEdit(event);' data-toggle='modal' data-target='#editModal'><span class="fa fa-edit"></span></a>
@@ -94,6 +98,12 @@
                         <span class="help-block"></span>
                     </div> 
 
+                    <div class="form-group">
+                        <label>Ingrese DNI:</label>
+                        <input type="text" name="dni" id="dni" class="form-control">
+                        <span class="help-block"></span>
+                    </div> 
+
                 </div>
 
                 <div class="modal-footer">
@@ -135,6 +145,12 @@
                         <span class="help-block"></span>
                     </div> 
 
+                    <div class="form-group">
+                        <label>Ingrese DNI:</label>
+                        <input type="text" name="dniAct" id="dniAct" class="form-control">
+                        <span class="help-block"></span>
+                    </div> 
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -169,7 +185,9 @@
                         <label for="">Id cliente: </label>
                         <label for="" id="lblCliente"></label><br>
                         <label for="">Nombre: </label>                               
-                        <label id="clienteDel"></label>                                
+                        <label id="clienteDel"></label><br> 
+                        <label for="">DNI: </label>                               
+                        <label id="dniDel"></label>                                 
                     </div>                            
                     
                 </div>
@@ -186,25 +204,29 @@
 
 <script>
 
-    var id, nombre, telefono;
+    var id, nombre, telefono, dni;
     
     function modalEdit(evento){
         id = $(evento.target).parents("tr").find("td").eq(0).text();
         nombre = $(evento.target).parents("tr").find("td").eq(1).text();
-        telefono = $(evento.target).parents("tr").find("td").eq(2).text();        
+        telefono = $(evento.target).parents("tr").find("td").eq(2).text();  
+        dni = $(evento.target).parents("tr").find("td").eq(3).text();       
         
         $("#idcliente").val(id);                            
         $("#nombreAct").val(nombre);                            
-        $("#telefonoAct").val(telefono);                                                                                                         
+        $("#telefonoAct").val(telefono);  
+        $("#dniAct").val(dni);                                                                                                         
     }
 
     function modalDelete(evento){
         id = $(evento.target).parents("tr").find("td").eq(0).text();
-        nombre = $(evento.target).parents("tr").find("td").eq(1).text();        
+        nombre = $(evento.target).parents("tr").find("td").eq(1).text();   
+        dni = $(evento.target).parents("tr").find("td").eq(3).text();    //ojo  
 
         $("#lblCliente").text(id);
         $("#idClienteDel").val(id);
         $("#clienteDel").text(nombre);
+        $("#dniDel").text(dni);
     }
 
     function validaCampos(indice){
@@ -217,12 +239,14 @@
       {
           nombre = $("#nombre").val();
           telefono = $("#telefono").val();
+          dni = $("#dni").val();
       }
 
       if(indice == 2)
       {
          nombre = $("#nombreAct").val();
          telefono = $("#telefonoAct").val();
+         dni = $("#dniAct").val();
       }
 
       //validamos campos
