@@ -35,7 +35,6 @@
 
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" >
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    
  
     <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
  <script src="swalert2.js"></script>

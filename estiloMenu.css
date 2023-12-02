@@ -1,14 +1,15 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
-body{
+
+body {
     background-size: cover;
 }
 
-.mPrincipal{
+.mPrincipal {
     max-width: 900px;
     margin: auto;
     background-color: #8E8989;
@@ -18,25 +19,25 @@ body{
     padding-bottom: 10px;
 }
 
-.horizontal{
+.horizontal {
     list-style: none;
     display: flex;
-    
+
     justify-content: space-around;
 }
 
-.horizontal > li > a{
+.horizontal>li>a {
     display: block;
     padding: -25px 20px;
     color: white;
     text-decoration: none;
 }
 
-.horizontal > li:hover{
+.horizontal>li:hover {
     background-color: red;
 }
 
-.vertical{
+.vertical {
     position: absolute;
     display: none;
     list-style: none;
@@ -44,16 +45,16 @@ body{
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.horizontal li:hover .vertical{
+.horizontal li:hover .vertical {
     display: block;
 }
 
 
-.vertical li:hover{
+.vertical li:hover {
     background-color: #8E8989;
 }
 
-.vertical li a{
+.vertical li a {
     display: block;
     color: white;
     padding: 15px 15px 15px 20px;
