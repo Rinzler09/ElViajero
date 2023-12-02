@@ -189,7 +189,7 @@
                     </a>
 
                     <div class="subitem">
-                        <a href="#">     
+                        <a href="consultaClientes.php">     
                             <div class="icon"><i class="fas fa-search"></i></div>                                            
                             <div class="title"><span>Consultar Clientes</span></div>                    
                         </a>
