@@ -237,7 +237,7 @@
                     </a>
 
                     <div class="subitem">
-                        <a href="#">     
+                        <a href="reporteClientes.php">     
                             <div class="icon"><i class="fas fa-chart-bar"></i></div>                                            
                             <div class="title"><span>Reporte de Clientes</span></div>                    
                         </a>
