@@ -34,7 +34,8 @@
             <th>ID</th>
             <th>Nombre</th>            
             <th>Apellidos</th>            
-            <th>Edad</th>            
+            <th>Edad</th>  
+            <th>Cargo</th>           
             <th>Telefono</th>
             <th>Direccion</th>                            
             <th>Accion</th>  
@@ -46,7 +47,8 @@
                     <td><?php echo $registro['idempleado']; ?></td>
                     <td><?php echo $registro['nombre']; ?></td>  
                     <td><?php echo $registro['apellidos']; ?></td>                    
-                    <td><?php echo $registro['edad']; ?></td>                                      
+                    <td><?php echo $registro['edad']; ?></td>     
+                    <td><?php echo $registro['cargoId']; ?></td>                                    
                     <td><?php echo $registro['telefono']; ?></td> 
                     <td><?php echo $registro['direccion']; ?></td>                                                         
                     <td>
@@ -160,6 +162,12 @@
                     </div> 
 
                     <div class="form-group">
+                        <label>Ingrese Cargo:</label>
+                        <input type="text" name="cargoId" id="cargoId" class="form-control">
+                        <span class="help-block"></span>
+                    </div> 
+
+                    <div class="form-group">
                         <label>Ingrese Telefono:</label>
                         <input type="text" name="telefono" id="telefono" class="form-control">
                         <span class="help-block"></span>
@@ -248,6 +256,13 @@
                     </div> 
 
                     <div class="form-group">
+                        <label>Ingrese Cargo:</label>
+                        <input type="text" name="cargoIdAct" id="cargoIdAct" class="form-control">
+                        <span class="help-block"></span>
+                    </div> 
+
+
+                    <div class="form-group">
                         <label>Ingrese Telefono:</label>
                         <input type="text" name="telefonoAct" id="telefonoAct" class="form-control">
                         <span class="help-block"></span>
@@ -327,13 +342,15 @@
         nombre = $(evento.target).parents("tr").find("td").eq(1).text();
         apellidos = $(evento.target).parents("tr").find("td").eq(2).text();
         edad = $(evento.target).parents("tr").find("td").eq(3).text();
-        telefono = $(evento.target).parents("tr").find("td").eq(4).text();
-        direccion = $(evento.target).parents("tr").find("td").eq(5).text();
+        cargo = $(evento.target).parents("tr").find("td").eq(4).text();
+        telefono = $(evento.target).parents("tr").find("td").eq(5).text();
+        direccion = $(evento.target).parents("tr").find("td").eq(6).text();
         
         $("#idempleado").val(id);                            
         $("#nombreAct").val(nombre);                            
         $("#apellidosAct").val(apellidos);       
-        $("#edadAct").val(edad); 
+        $("#edadAct").val(edad);
+        $("#cargoIdAct").val(cargo); 
         $("#telefonoAct").val(telefono);      
         $("#direccionAct").val(direccion); 
                                                                                                                
@@ -351,7 +368,7 @@
 
     function validaCampos(indice){
       
-         let id, nombre, apellidos, edad, telefono, direcion;
+         let id, nombre, apellidos, edad, cargo, telefono, direcion;
  
  
  
@@ -360,6 +377,7 @@
              nombre = $("#nombre").val();
              apellidos = $("#apellidos").val();
              edad = $("#edad").val();
+             cargo = $("#cargoId").val();
              telefono = $("#telefono").val();
              direccion = $("#direccion").val();
          }
@@ -369,6 +387,7 @@
             nombre = $("#nombreAct").val();
             apellidos = $("#apellidosAct").val();
             edad = $("#edadAct").val();
+            cargo = $("#cargoIdAct").val();
             telefono = $("#telefonoAct").val();
             direccion = $("#direccionAct").val();
          }

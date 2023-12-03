@@ -47,6 +47,7 @@
         $nombre = $_POST['nombre'];  
         $apellidos = $_POST['apellidos'];  
         $edad = $_POST['edad'];  
+        $cargo = $_POST['cargoId'];
         
         //$direccion = $_POST['direccion']; 
 
@@ -63,8 +64,8 @@
         $imagen = 'imagenes/empleados/'.$_FILES['archivo']['name'];
 
 
-        $query = "INSERT INTO empleados (nombre, apellidos, edad, telefono, direccion, imagen) 
-        VALUES ('$nombre','$apellidos',$edad,$telefono,$direccion,'$imagen')";
+        $query = "INSERT INTO empleados (nombre, apellidos, edad, cargoId, telefono, direccion, imagen) 
+        VALUES ('$nombre','$apellidos',$edad,$cargo,$telefono,$direccion,'$imagen')";
         
         $con->probar($query);
         
@@ -82,6 +83,7 @@
         $nombre = $_POST['nombreAct'];  
         $apellidos = $_POST['apellidosAct'];  
         $edad = $_POST['edadAct'];  
+        $cargo = $_POST['cargoIdAct'];  
         $telefono = $_POST['telefonoAct'];  
         $direccion = $_POST['direccionAct'];
         
@@ -89,7 +91,7 @@
         if($_FILES['archivoAct']['name'] == "")
         {
             $query = "UPDATE empleados 
-            SET nombre='$nombre', apellidos='$apellidos', edad=$edad, telefono=$telefono, direccion='$direccion'
+            SET nombre='$nombre', apellidos='$apellidos', edad=$edad, cargoId=$cargo, telefono=$telefono, direccion='$direccion'
             WHERE idempleado=$id";
         }
         else
@@ -97,7 +99,7 @@
             $imagen = 'imagenes/empleados/'.$_FILES['archivoAct']['name'];  
 
             $query = "UPDATE empleados 
-            SET nombre='$nombre', apellidos='$apellidos', edad=$edad, telefono=$telefono, direccion='$direccion', imagen='$imagen'
+            SET nombre='$nombre', apellidos='$apellidos', edad=$edad, cargoId=$cargo, telefono=$telefono, direccion='$direccion', imagen='$imagen'
             WHERE idempleado=$id";
         }
         
