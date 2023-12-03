@@ -170,9 +170,9 @@
                     </div> -->
 
                     <div class="subitem">
-                        <a href="#">         
+                        <a href="ventas.php">         
                             <div class="icon"><i class="fas fa-money-bill-alt"></i></div>                                        
-                            <div class="title"><span>Administar Ventas</span></div>                    
+                            <div class="title"><span>Ventas</span></div>                    
                         </a>
                     </div>
                 </div>
@@ -210,23 +210,9 @@
                     </div>
 
                     <div class="subitem">
-                        <a href="consultaAerolinea.php">    
-                            <div class="icon"><i class="fas fa-search"></i></div>                                            
-                            <div class="title"><span>Consultar Aerolineas</span></div>                    
-                        </a>
-                    </div>
-
-                    <div class="subitem">
                         <a href="#">     
                             <div class="icon"><i class="fas fa-search"></i></div>                                            
-                            <div class="title"><span>Consultar Viajes Aereos</span></div>                    
-                        </a>
-                    </div>
-
-                    <div class="subitem">
-                        <a href="#">     
-                            <div class="icon"><i class="fas fa-search"></i></div>                                            
-                            <div class="title"><span>Consultar Viajes Terrestres</span></div>                    
+                            <div class="title"><span>Consultar Viajes</span></div>                    
                         </a>
                     </div>
 
