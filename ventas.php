@@ -24,23 +24,67 @@ $con = new conexion();
 
 <?php
 
-if (isset($_POST['add'])) {
-    // Lógica para agregar una venta
-    // ...
-    echo "<script>toastr.success('¡Venta creada correctamente!','Aviso!');</script>";
+if(isset($_POST['add'])) {
+    $cliente = $_POST['clienteId'];
+    $destino = $_POST['destinoId'];
+    $empleado = $_POST['empleadoId'];
+    $tipo = $_POST['tipoViajeId'];
+    $categoria = $_POST['categoriaId'];
+    $fechaSalida = $_POST['fechaSalida'];
+    $fechaRegreso = $_POST['fechaRegreso'];
+    $precio = $_POST['precio'];
+
+    // Puedes realizar validaciones adicionales si es necesario
+
+    $query = "INSERT INTO viajes (clienteId, destinoId, empleadoId, tipoViajeId, categoriaId, fechaSalida, fechaRegreso, precio) 
+              VALUES ('$cliente', '$destino', '$empleado', '$tipo', '$categoria', '$fechaSalida', '$fechaRegreso', '$precio')";
+
+    $con->probar($query);
+
+    echo "<script>toastr.success('Viaje registrado correctamente!','Aviso!');</script>";
 }
 
-if (isset($_POST['edit'])) {
-    // Lógica para editar una venta
-    // ...
-    echo "<script>toastr.success('¡Venta actualizada correctamente!','Aviso!');</script>";
+
+
+if(isset($_POST['edit'])) {
+    $viajeId = $_POST['viajeId'];
+    $cliente = $_POST['clienteId'];
+    $destino = $_POST['destinoId'];
+    $empleado = $_POST['empleadoId'];
+    $tipo = $_POST['tipoViajeId'];
+    $categoria = $_POST['categoriaId'];
+    $fechaSalida = $_POST['fechaSalida'];
+    $fechaRegreso = $_POST['fechaRegreso'];
+    $precio = $_POST['precio'];
+
+    $query = "UPDATE viajes 
+              SET clienteId='$cliente', destinoId='$destino', empleadoId='$empleado', 
+                  tipoViajeId='$tipo', categoriaId='$categoria', fechaSalida='$fechaSalida', 
+                  fechaRegreso='$fechaRegreso', precio='$precio'
+              WHERE viajeId=$viajeId";
+            
+    $con->probar($query);
+    
+    echo "<script>toastr.success('Viaje actualizado correctamente!','Aviso!');</script>";
 }
 
-if (isset($_POST['del'])) {
-    // Lógica para eliminar una venta
-    // ...
-    echo "<script>toastr.success('¡Venta eliminada correctamente!','Aviso!');</script>";
+
+if(isset($_POST['del']))
+{
+    $id = $_POST['idViajeDel'];
+
+    $query = "DELETE FROM viajes
+    WHERE viajeId = $id";
+
+    $con->probar($query);
+
+    echo "<script>toastr.success('Viaje eliminado correctamente!','Aviso!');</script>";
 }
+
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
