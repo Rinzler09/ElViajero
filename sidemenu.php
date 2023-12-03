@@ -258,7 +258,7 @@
                     </div>
 
                     <div class="subitem">
-                        <a href="#">     
+                        <a href="reporteVentas.php">     
                             <div class="icon"><i class="fas fa-chart-bar"></i></div>                                            
                             <div class="title"><span>Reporte de Ventas</span></div>                    
                         </a>
