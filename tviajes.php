@@ -107,8 +107,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administracion de Tipo de Viajes</title>    
-    //con el siguiente script nos muestra el formulario
     <script src="busquedaTipoViajes.js"></script>
     
 

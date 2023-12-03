@@ -18,8 +18,8 @@
     {
         $f = ($_POST['query']);
         $sql = "SELECT * FROM destinos
-        WHERE nombre LIKE '%". $f . "%' OR destinoId LIKE '%". $f . "%' OR descripcion LIKE '%". $f . "%'
-        ";        
+        WHERE nombre LIKE '%". $f . "%' OR destinoId LIKE '%". $f . "%' OR descripcion LIKE '%". $f . "% OR precio LIKE '%.$f 
+        ";        //ojo
     }
 
     $resultado = $con->consulta($sql);
@@ -33,7 +33,8 @@
         <tr>
             <th>ID</th>
             <th>Nombre</th>            
-            <th>Descripcion</th>            
+            <th>Descripcion</th>  
+            <th>Precio</th>          
             <th>Accion</th>               
                                     
             
@@ -45,7 +46,7 @@
                     <td><?php echo $registro['destinoId']; ?></td>
                     <td><?php echo $registro['nombre']; ?></td>  
                     <td><?php echo $registro['descripcion']; ?></td>
-                                      
+                    <td><?php echo $registro['precio']; ?></td>                  
                                                                             
                     <td>                       
                       
@@ -116,6 +117,12 @@
                         <span class="help-block"></span>
                     </div> 
 
+                    <div class="form-group">
+                        <label>Ingrese Precio:</label>
+                        <input type="text" name="precio" id="precio" class="form-control">
+                        <span class="help-block"></span>
+                    </div> 
+
                                        
                 </div>
 
@@ -178,7 +185,13 @@
                         <label>Ingrese Descripcion:</label>
                         <input type="text" name="descripcionAct" id="descripcionAct" class="form-control">
                         <span class="help-block"></span>
-                    </div>                 
+                    </div>      
+                    
+                    <div class="form-group">
+                        <label>Ingrese Precio:</label>
+                        <input type="text" name="precioAct" id="precioAct" class="form-control">
+                        <span class="help-block"></span>
+                    </div>   
                                         
 
                 </div>
@@ -215,7 +228,7 @@
                         <label for="">Id Tipo de Viaje: </label>
                         <label for="" id="lblDestino"></label><br>
                         <label for="">Nombre: </label>                               
-                        <label id="destinoDel"></label>                                
+                        <label id="destinoDel"></label> <br>                                                         
                     </div>                            
                     
                 </div>
@@ -232,18 +245,18 @@
 
 <script>
 
-    var id, nombre, descripcion;   
+    var id, nombre, descripcion, precio;   
     
     function modalEdit(evento){
         id = $(evento.target).parents("tr").find("td").eq(0).text();
         nombre = $(evento.target).parents("tr").find("td").eq(1).text();
         descripcion = $(evento.target).parents("tr").find("td").eq(2).text();
-       
+        precio = $(evento.target).parents("tr").find("td").eq(3).text();
         
         $("#idDestinoAct").val(id);                            
         $("#nombreAct").val(nombre);                            
         $("#descripcionAct").val(descripcion);
-             
+        $("#precioAct").val(precio);     
         
                                                                                                                
     }
@@ -252,8 +265,6 @@
         id = $(evento.target).parents("tr").find("td").eq(0).text();
         nombre = $(evento.target).parents("tr").find("td").eq(1).text();        
         descripcion =  $(evento.target).parents("tr").find("td").eq(2).text();     
-       
-
         $("#lblDestino").text(id);
         $("#idDestinoDel").val(id);
         $("#destinoDel").text(nombre + ' ' + descripcion);
@@ -261,7 +272,7 @@
 
     function validaCampos(indice){
       
-         let id, nombre, descripcion;
+         let id, nombre, descripcion, precio;
  
  
  
@@ -269,7 +280,7 @@
          {
              nombre = $("#nombre").val();
              descripcion = $("#descripcion").val();
-             
+             precio = $("#precio").val();
              
          }
  
@@ -277,7 +288,7 @@
          {
             nombre = $("#nombreAct").val();
             descripcion = $("#descripcionAct").val();
-            
+            precio = $("#precioAct").val();
             
          }
  
@@ -289,6 +300,11 @@
 
          if($.trim(descripcion) == ""){
          toastr.error("No ha ingresado la descripcion","Aviso!");
+             return false;
+         }
+
+         if($.trim(precio) == ""){
+         toastr.error("No ha ingresado el precio","Aviso!");
              return false;
          }
          

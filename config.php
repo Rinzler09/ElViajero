@@ -1,8 +1,8 @@
 <?php
 /**conexion a BD */
-$usuario  = "admin";
-$password = "Temporal1";
-$servidor = "34.125.240.38";
+$usuario  = "root";
+$password = "";
+$servidor = "localhost";
 $basededatos = "viajerodb";
 $con = mysqli_connect($servidor, $usuario, $password) or die("No se ha podido conectar al Servidor");
 mysqli_query($con,"SET SESSION collation_connection ='utf8_unicode_ci'");
