@@ -29,8 +29,9 @@ $con = new conexion();
 if (isset($_POST['add'])) {
 
     $nombre = $_POST['nombre'];
+    $apellido = $_POST['apellido'];
     $dni = $_POST['dni'];
-
+  
     if ($_POST['telefono'] != "")
         $telefono = $_POST['telefono'];
     else
@@ -40,8 +41,8 @@ if (isset($_POST['add'])) {
     // $query = "INSERT INTO clientes (nombre, telefono) 
     //     VALUES ('$nombre',$telefono)";
 
-    $query = "INSERT INTO clientes (nombre, telefono, DNI) 
-        VALUES ('$nombre', $telefono, '$dni')";
+    $query = "INSERT INTO clientes (nombre,apellido, telefono, DNI) 
+        VALUES ('$nombre','$apellido', $telefono, '$dni')";
 
     $con->probar($query);
 
@@ -54,6 +55,7 @@ if (isset($_POST['add'])) {
 if (isset($_POST['edit'])) {
     $id = $_POST['idcliente'];
     $nombre = $_POST['nombreAct'];
+    $apellido = $_POST['apellidoAct'];
     $dni = $_POST['dniAct'];
 
     if ($_POST['telefonoAct'] != "")
@@ -66,7 +68,7 @@ if (isset($_POST['edit'])) {
     //     WHERE idcliente=$id";
 
     $query = "UPDATE clientes 
-                 SET nombre = '$nombre', telefono = $telefono, DNI = '$dni'
+                 SET nombre = '$nombre', apellido = '$apellido', telefono = $telefono, DNI = '$dni'
                  WHERE idcliente = $id";
 
     $con->probar($query);

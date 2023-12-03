@@ -165,7 +165,7 @@
                 <div class="modal-body">
                     
                     <label>Id Aerolinea:</label>
-                    <input type="text" name="idaerolinea" id="idaerolinea" class="d-none form-control">                                
+                    <input type="text" name="idaerolinea" id="idaerolinea" class="d-none form-control" readonly>                                
                 
                     <div class="form-group">
                         <label>Ingrese Nombre:</label>

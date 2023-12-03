@@ -109,17 +109,17 @@ $pdf->SetFont('helvetica','',8);
 
 
 //SQL para consultas Empleados
-//$fechaInit = date("Y-m-d", strtotime($_POST['fecha_ingreso']));
-//$fechaFin  = date("Y-m-d", strtotime($_POST['fechaFin']));
+//$filtroechaInit = date("Y-m-d", strtotime($_POST['fecha_ingreso']));
+//$filtroechaFin  = date("Y-m-d", strtotime($_POST['fechaFin']));
 
 $filtro = ($_POST['buscar']);
 
 $sqlTrabajadores = "SELECT viajes.viajeId, 
-CONCAT(clientes.nombre, ' ', clientes.apellido) as cliente_nombre, 
-destinos.nombre as destino_nombre, 
-CONCAT(empleados.nombre, ' ', empleados.apellidos) as empleado_nombre, 
-categorias.nombre as categoria_nombre, 
-tipoviaje.nombre as tipoviaje_nombre, 
+CONCAT(clientes.nombre, ' ', clientes.apellido) AS cliente_nombre, 
+destinos.nombre AS destino_nombre, 
+CONCAT(empleados.nombre, ' ', empleados.apellidos) AS empleado_nombre, 
+categorias.nombre AS categoria_nombre, 
+tipoviaje.nombre AS tipoviaje_nombre, 
 viajes.fechaSalida, 
 viajes.fechaRegreso, 
 viajes.precio
@@ -128,7 +128,16 @@ JOIN clientes ON viajes.clienteId = clientes.idcliente
 JOIN destinos ON viajes.destinoId = destinos.destinoId
 JOIN empleados ON viajes.empleadoId = empleados.idempleado
 JOIN categorias ON viajes.categoriaId = categorias.categoriaId
-JOIN tipoviaje ON viajes.tipoViajeId = tipoviaje.tipoViajeId";
+JOIN tipoviaje ON viajes.tipoViajeId = tipoviaje.tipoViajeId
+WHERE viajes.viajeId LIKE '%$filtro%' 
+    OR CONCAT(clientes.nombre, ' ', clientes.apellido) LIKE '%$filtro%'
+    OR destinos.nombre LIKE '%$filtro%'
+    OR CONCAT(empleados.nombre, ' ', empleados.apellidos) LIKE '%$filtro%'
+    OR categorias.nombre LIKE '%$filtro%'
+    OR tipoviaje.nombre LIKE '%$filtro%'
+    OR viajes.fechaSalida LIKE '%$filtro%'
+    OR viajes.fechaRegreso LIKE '%$filtro%'
+    OR viajes.precio LIKE '%$filtro%'";
 //$sqlTrabajadores = ("SELECT * FROM trabajadores");
 $query = mysqli_query($con, $sqlTrabajadores);
 

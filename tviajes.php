@@ -46,10 +46,9 @@
         
         $nombre = $_POST['nombre'];  
         $descripcion = $_POST['descripcion'];
-        $empresa = $_POST['empresa']; 
        
-        $query = "INSERT INTO tipoviaje (nombre, descripcion, empresa) 
-        VALUES ('$nombre','$descripcion','$empresa')";
+        $query = "INSERT INTO tipoviaje (nombre, descripcion) 
+        VALUES ('$nombre','$descripcion')";
         
         $con->probar($query);
         
@@ -66,13 +65,12 @@
         $id = $_POST['idTipoViajeAct']; 
         $nombre = $_POST['nombreAct'];  
         $descripcion = $_POST['descripcionAct'];
-        $empresa = $_POST['empresaAct']; 
       
         
         
        
         $query = "UPDATE tipoviaje 
-        SET nombre='$nombre', descripcion='$descripcion', empresa='$empresa'
+        SET nombre='$nombre', descripcion='$descripcion'
         WHERE tipoViajeId=$id";
             
         $con->probar($query);

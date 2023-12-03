@@ -18,8 +18,7 @@
     {
         $f = ($_POST['query']);
         $sql = "SELECT * FROM tipoviaje
-        WHERE nombre LIKE '%". $f . "%' OR tipoViajeId LIKE '%". $f . "%' OR descripcion LIKE '%". $f . "%' OR empresa LIKE '%".$f . "%'
-        ";        
+        WHERE nombre LIKE '%". $f . "%' OR tipoViajeId LIKE '%". $f . "%' OR descripcion LIKE '%". $f . "%' ";        
     }
 
     $resultado = $con->consulta($sql);
@@ -34,7 +33,6 @@
             <th>ID</th>
             <th>Nombre</th>            
             <th>Descripcion</th>
-            <th>Empresa</th>
             <th>Accion</th>               
                                     
             
@@ -46,7 +44,7 @@
                     <td><?php echo $registro['tipoViajeId']; ?></td>
                     <td><?php echo $registro['nombre']; ?></td>  
                     <td><?php echo $registro['descripcion']; ?></td>
-                    <td><?php echo $registro['empresa']; ?></td>                      
+                        
                                                                             
                     <td>                       
                       
@@ -117,12 +115,6 @@
                         <span class="help-block"></span>
                     </div> 
 
-                    <div class="form-group">
-                        <label>Ingrese el Nombre Empresa:</label>
-                        <input type="text" name="empresa" id="empresa" class="form-control">
-                        <span class="help-block"></span>
-                    </div> 
-
                     
                 </div>
 
@@ -173,7 +165,7 @@
                 <div class="modal-body">
                     
                     <label>Id Tipo de Viajes:</label>
-                    <input type="text" name="idTipoViajeAct" id="idTipoViajeAct" class="d-none form-control">                                
+                    <input type="text" name="idTipoViajeAct" id="idTipoViajeAct" class="d-none form-control" readonly>                                
                 
                     <div class="form-group">
                         <label>Ingrese Nombre:</label>
@@ -186,13 +178,6 @@
                         <input type="text" name="descripcionAct" id="descripcionAct" class="form-control">
                         <span class="help-block"></span>
                     </div>
-                    
-                    <div class="form-group">
-                        <label>Ingrese el Nombre de la Empresa:</label>
-                        <input type="text" name="empresaAct" id="empresaAct" class="form-control">
-                        <span class="help-block"></span>
-                    </div>   
-
                     
 
                 </div>
@@ -246,18 +231,16 @@
 
 <script>
 
-    var id, nombre, descripcion, empresa;   
+    var id, nombre, descripcion;   
     
     function modalEdit(evento){
         id = $(evento.target).parents("tr").find("td").eq(0).text();
         nombre = $(evento.target).parents("tr").find("td").eq(1).text();
         descripcion = $(evento.target).parents("tr").find("td").eq(2).text();
-        empresa = $(evento.target).parents("tr").find("td").eq(3).text();
         
         $("#idTipoViajeAct").val(id);                            
         $("#nombreAct").val(nombre);                            
-        $("#descripcionAct").val(descripcion);
-        $("#empresaAct").val(empresa);       
+        $("#descripcionAct").val(descripcion);      
         
                                                                                                                
     }
@@ -266,7 +249,6 @@
         id = $(evento.target).parents("tr").find("td").eq(0).text();
         nombre = $(evento.target).parents("tr").find("td").eq(1).text();        
         descripcion =  $(evento.target).parents("tr").find("td").eq(2).text();     
-        empresa = $(evento.target).parents("tr").find("td").eq(3).text();
 
         $("#lblTipoViaje").text(id);
         $("#idTipoViajeaDel").val(id);
@@ -275,7 +257,7 @@
 
     function validaCampos(indice){
       
-         let id, nombre, descripcion, empresa;
+         let id, nombre, descripcion;
  
  
  
@@ -283,7 +265,7 @@
          {
              nombre = $("#nombre").val();
              descripcion = $("#descripcion").val();
-             empresa = $("#empresa").val();
+
              
          }
  
@@ -291,7 +273,7 @@
          {
             nombre = $("#nombreAct").val();
             descripcion = $("#descripcionAct").val();
-            empresa = $("#empresaAct").val();
+  
             
          }
  
@@ -303,10 +285,6 @@
 
          if($.trim(descripcion) == ""){
          toastr.error("No ha ingresado la descripcion","Aviso!");
-             return false;
-         }
-         if($.trim(empresa) == ""){
-         toastr.error("No ha ingresado el nombre de la empresa","Aviso!");
              return false;
          }
 
