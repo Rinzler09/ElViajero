@@ -219,7 +219,7 @@
                     </div>
 
                     <div class="subitem">
-                        <a href="#">     
+                        <a href="consultaVentas.php">     
                             <div class="icon"><i class="fas fa-search"></i></div>                                            
                             <div class="title"><span>Consultar Ventas</span></div>                    
                         </a>
