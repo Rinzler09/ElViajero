@@ -195,17 +195,19 @@
                         </a>
                     </div>
 
-                    <!-- <div class="subitem">
-                        <a href="#">     
-                            <div class="icon"><i class="fas fa-search"></i></div>                                            
-                            <div class="title"><span>Consultar Compras</span></div>                    
-                        </a>
-                    </div> -->
 
                     <div class="subitem">
                         <a href="consultaEmpleados.php">     
                             <div class="icon"><i class="fas fa-search"></i></div>                                            
                             <div class="title"><span>Consultar Empleados</span></div>                    
+                        </a>
+                    </div>
+
+
+                    <div class="subitem">
+                        <a href="consultaAerolinea.php">     
+                            <div class="icon"><i class="fas fa-search"></i></div>                                            
+                            <div class="title"><span>Consultar Aeronileas</span></div>                    
                         </a>
                     </div>
 
