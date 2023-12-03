@@ -2,9 +2,9 @@
 
 class conexion{
 
-    private $servidor="localhost";
-    private $usuario="root";
-    private $password="";
+    private $servidor="34.125.240.38";
+    private $usuario="admin";
+    private $password="Temporal1";
     private $db="viajerodb";
     private $con;
     private $msj;
@@ -20,9 +20,14 @@ class conexion{
     }
 
     public function probar($query){
-        $this->con->exec($query);            
-        return $this->con->lastInsertId();
+        try {
+            $this->con->exec($query);            
+            return $this->con->lastInsertId();
+        } catch (PDOException $e) {
+            echo "Error al ejecutar la consulta: " . $e->getMessage();
+        }
     }
+    
     public function consulta($query){
         $sentencia = $this->con->prepare($query);   
         $sentencia->execute();
