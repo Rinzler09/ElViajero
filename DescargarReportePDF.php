@@ -13,7 +13,7 @@ class MYPDF extends TCPDF{
             $bMargin = $this->getBreakMargin();
             $auto_page_break = $this->AutoPageBreak;
             $this->SetAutoPageBreak(false, 0);
-            $img_file = dirname( __FILE__ ) .'/icons/logo.png';
+            $img_file = dirname( __FILE__ ) .'/img/favicon.jpg';
             $this->Image($img_file, 85, 8, 40, 45, '', '', '', false, 30, '', false, false, 0);
             $this->SetAutoPageBreak($auto_page_break, $bMargin);
             $this->setPageMark();
@@ -32,8 +32,8 @@ $pdf->setPrintHeader(true); //Eliminar la linea superior del PDF por defecto
 $pdf->SetAutoPageBreak(true, PDF_MARGIN_BOTTOM); //Activa o desactiva el modo de salto de página automático
  
 //Informacion del PDF
-$pdf->SetCreator('ediaz');
-$pdf->SetAuthor('ediaz');
+$pdf->SetCreator('grupo#3');
+$pdf->SetAuthor('grupo#3');
 $pdf->SetTitle('Reporte de Empleados');
  
 /** Eje de Coordenadas
@@ -60,11 +60,11 @@ $pdf->Write(0, 'Fecha: '. date('d-m-Y'));
 $pdf->SetXY(150, 30);
 $pdf->Write(0, 'Hora: '. date('h:i A'));
 
-$canal ='UTH';
+$canal ='EL VIAJERO';
 $pdf->SetFont('helvetica','B',10); //Tipo de fuente y tamaño de letra
 $pdf->SetXY(15, 20); //Margen en X y en Y
 $pdf->SetTextColor(204,0,0);
-$pdf->Write(0, 'Desarrollador: Edwin Diaz');
+$pdf->Write(0, 'Desarrollador: GRUPO #3');
 $pdf->SetTextColor(0, 0, 0); //Color Negrita
 $pdf->SetXY(15, 25);
 $pdf->Write(0, 'Empresa: '. $canal);
