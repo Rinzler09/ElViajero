@@ -66,7 +66,6 @@ $resultado = $con->consulta($sql);
                 <th>Fecha Ida</th>
                 <th>Fecha Vuelta</th>
                 <th>Precio</th>
-                <th>Acción</th>
             </tr>
         </thead>
         <tbody>
@@ -81,10 +80,6 @@ $resultado = $con->consulta($sql);
                     <td><?php echo $registro['fechaSalida']; ?></td>
                     <td><?php echo $registro['fechaRegreso']; ?></td>
                     <td><?php echo $registro['precio']; ?></td>
-                    <td>
-                        <a class='add_empleado' href='#' title='Editar' onclick='return modalEdit(event);' data-toggle='modal' data-target='#editModal'><span class="fa fa-edit"></span></a>
-                        <a class='add' href='#' title='Eliminar' onclick='return modalDelete(event);' data-toggle='modal' data-target='#deleteModal'><span class='fa fa-trash'></span></a>
-                    </td>
                 </tr>
             <?php } ?>
         </tbody>

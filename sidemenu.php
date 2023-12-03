@@ -207,16 +207,10 @@
                     <div class="subitem">
                         <a href="consultaAerolinea.php">     
                             <div class="icon"><i class="fas fa-search"></i></div>                                            
-                            <div class="title"><span>Consultar Aeronileas</span></div>                    
+                            <div class="title"><span>Consultar Aerolineas</span></div>                    
                         </a>
                     </div>
 
-                    <div class="subitem">
-                        <a href="#">     
-                            <div class="icon"><i class="fas fa-search"></i></div>                                            
-                            <div class="title"><span>Consultar Viajes</span></div>                    
-                        </a>
-                    </div>
 
                     <div class="subitem">
                         <a href="#">     
