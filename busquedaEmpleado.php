@@ -162,10 +162,18 @@
                     </div> 
 
                     <div class="form-group">
-                        <label>Ingrese Cargo:</label>
-                        <input type="text" name="cargoId" id="cargoId" class="form-control">
+                        <label>Seleccione el cargo:</label>
+                        <select name="cargoId" id="cargoId" class="form-control">
+                            <option value="0">Seleccione el cargo</option>
+
+                            <?php $query = $con -> consulta ("SELECT * FROM cargos");
+                            foreach($query as $registro) { ?>
+                                <option value="<?php echo $registro['cargoId']; ?>"><?php echo $registro['nombre']; ?></option>
+                            <?php }?>
+
+                        </select>
                         <span class="help-block"></span>
-                    </div> 
+                    </div>
 
                     <div class="form-group">
                         <label>Ingrese Telefono:</label>
@@ -255,11 +263,19 @@
                         <span class="help-block"></span>
                     </div> 
 
-                    <div class="form-group">
-                        <label>Ingrese Cargo:</label>
-                        <input type="text" name="cargoIdAct" id="cargoIdAct" class="form-control">
+                   <div class="form-group">
+                        <label>Seleccione el cargo:</label>
+                        <select name="cargoIdAct" id="cargoIdAct" class="form-control">
+                            <option value="0">Seleccione el cargo</option>
+
+                            <?php $query = $con -> consulta ("SELECT * FROM cargos");
+                            foreach($query as $registro) { ?>
+                                <option value="<?php echo $registro['cargoId']; ?>"><?php echo $registro['nombre']; ?></option>
+                            <?php }?>
+
+                        </select>
                         <span class="help-block"></span>
-                    </div> 
+                    </div>
 
 
                     <div class="form-group">

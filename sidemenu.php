@@ -254,7 +254,7 @@
                     </div>
 
                     <div class="subitem">
-                        <a href="#">     
+                        <a href="graphics.php" target="_blank">     
                             <div class="icon"><i class="fas fa-chart-line"></i></div>                                            
                             <div class="title"><span>Graficos</span></div>                    
                         </a>
