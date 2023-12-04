@@ -20,7 +20,7 @@
         // $sql = "SELECT * FROM clientes
         // WHERE nombre LIKE '%". $f . "%' OR idcliente LIKE '%". $f . "%' OR  telefono LIKE '%". $f . "%' ";        
         $sql = "SELECT * FROM clientes
-          WHERE nombre LIKE '%". $f . "%' OR idcliente LIKE '%". $f . "%' OR telefono LIKE '%". $f . "%' OR DNI LIKE '%". $f . "%' ";        
+          WHERE nombre LIKE '%". $f . "%' OR idcliente LIKE '%". $f . "%' OR apellido LIKE '%". $f . "%' OR telefono LIKE '%". $f . "%' OR DNI LIKE '%". $f . "%' ";        
     }
 
     $resultado = $con->consulta($sql);
@@ -33,7 +33,8 @@
     <thead style="background-color: #D3E9F1">
         <tr>
             <th>ID</th>
-            <th>Cliente</th>            
+            <th>Nombre Cliente</th>   
+            <th>Apellido Cliente</th>          
             <th>Telefono</th>  
             <th>DNI</th>                 
             <th>Accion</th>  
@@ -44,6 +45,7 @@
                 <tr>
                     <td><?php echo $registro['idcliente']; ?></td>
                     <td><?php echo $registro['nombre']; ?></td>  
+                    <td><?php echo $registro['apellido']; ?></td>  
                     <td><?php echo $registro['telefono']; ?></td> 
                     <td><?php echo $registro['DNI']; ?></td> 
                     <td>
@@ -93,6 +95,12 @@
                     </div> 
 
                     <div class="form-group">
+                        <label>Ingrese Apellido:</label>
+                        <input type="text" name="apellido" id="apellido" class="form-control">
+                        <span class="help-block"></span>
+                    </div> 
+
+                    <div class="form-group">
                         <label>Ingrese Telefono:</label>
                         <input type="text" name="telefono" id="telefono" class="form-control">
                         <span class="help-block"></span>
@@ -131,11 +139,17 @@
                 <div class="modal-body">
                     
                     <label>Id Cliente:</label>
-                    <input type="text" name="idcliente" id="idcliente" class="d-none form-control">                                
+                    <input type="text" name="idcliente" id="idcliente" class="d-none form-control" readonly>                                
                 
                     <div class="form-group">
                         <label>Ingrese Nombre:</label>
                         <input type="text" name="nombreAct" id="nombreAct" class="form-control">
+                        <span class="help-block"></span>
+                    </div> 
+
+                    <div class="form-group">
+                        <label>Ingrese Apellido:</label>
+                        <input type="text" name="apellidoAct" id="apellidoAct" class="form-control">
                         <span class="help-block"></span>
                     </div> 
 
@@ -186,6 +200,8 @@
                         <label for="" id="lblCliente"></label><br>
                         <label for="">Nombre: </label>                               
                         <label id="clienteDel"></label><br> 
+                        <label for="">Apellido: </label>                               
+                        <label id="clienteApeDel"></label><br>
                         <label for="">DNI: </label>                               
                         <label id="dniDel"></label>                                 
                     </div>                            
@@ -204,16 +220,18 @@
 
 <script>
 
-    var id, nombre, telefono, dni;
+    var id, nombre, telefono, dni, apellido;
     
     function modalEdit(evento){
         id = $(evento.target).parents("tr").find("td").eq(0).text();
         nombre = $(evento.target).parents("tr").find("td").eq(1).text();
-        telefono = $(evento.target).parents("tr").find("td").eq(2).text();  
-        dni = $(evento.target).parents("tr").find("td").eq(3).text();       
+        apellido = $(evento.target).parents("tr").find("td").eq(2).text();
+        telefono = $(evento.target).parents("tr").find("td").eq(3).text();  
+        dni = $(evento.target).parents("tr").find("td").eq(4).text();       
         
         $("#idcliente").val(id);                            
-        $("#nombreAct").val(nombre);                            
+        $("#nombreAct").val(nombre);  
+        $("#apellidoAct").val(apellido);                           
         $("#telefonoAct").val(telefono);  
         $("#dniAct").val(dni);                                                                                                         
     }
@@ -221,23 +239,26 @@
     function modalDelete(evento){
         id = $(evento.target).parents("tr").find("td").eq(0).text();
         nombre = $(evento.target).parents("tr").find("td").eq(1).text();   
+        apellido =  $(evento.target).parents("tr").find("td").eq(2).text();  
         dni = $(evento.target).parents("tr").find("td").eq(3).text();    //ojo  
 
         $("#lblCliente").text(id);
         $("#idClienteDel").val(id);
         $("#clienteDel").text(nombre);
+        $("#clienteApeDel").text(apellido);
         $("#dniDel").text(dni);
     }
 
     function validaCampos(indice){
       
-      let id, nombre, telefono;
+      let id, nombre, apellido, telefono;
 
 
 
       if(indice == 1)
       {
           nombre = $("#nombre").val();
+          apellido = $("#apellido").val();
           telefono = $("#telefono").val();
           dni = $("#dni").val();
       }
@@ -245,6 +266,7 @@
       if(indice == 2)
       {
          nombre = $("#nombreAct").val();
+         apellido = $("#apellidoAct").val();
          telefono = $("#telefonoAct").val();
          dni = $("#dniAct").val();
       }

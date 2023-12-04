@@ -18,8 +18,7 @@
     {
         $f = ($_POST['query']);
         $sql = "SELECT * FROM destinos
-        WHERE nombre LIKE '%". $f . "%' OR destinoId LIKE '%". $f . "%' OR descripcion LIKE '%". $f . "% OR precio LIKE '%.$f 
-        ";        //ojo
+        WHERE nombre LIKE '%". $f . "%' OR destinoId LIKE '%". $f . "%' OR descripcion LIKE '%". $f . "%'OR precio LIKE '%".$f. "%' ";     
     }
 
     $resultado = $con->consulta($sql);
@@ -173,7 +172,7 @@
                 <div class="modal-body">
                     
                     <label>Id Tipo de Viajes:</label>
-                    <input type="text" name="idDestinoAct" id="idDestinoAct" class="d-none form-control">                                
+                    <input type="text" name="idDestinoAct" id="idDestinoAct" class="d-none form-control" readonly>                                
                 
                     <div class="form-group">
                         <label>Ingrese Nombre:</label>

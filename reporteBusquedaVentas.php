@@ -30,22 +30,30 @@ if (isset($_POST['query'])) {
     $f = $_POST['query'];
     
     $sql = "SELECT viajes.viajeId, 
-            CONCAT(clientes.nombre, ' ', clientes.apellido) AS cliente_nombre, 
-            destinos.nombre AS destino_nombre, 
-            CONCAT(empleados.nombre, ' ', empleados.apellidos) AS empleado_nombre, 
-            categorias.nombre AS categoria_nombre, 
-            tipoviaje.nombre AS tipoviaje_nombre, 
-            viajes.fechaSalida, 
-            viajes.fechaRegreso, 
-            viajes.precio
-            FROM viajes
-            JOIN clientes ON viajes.clienteId = clientes.idcliente
-            JOIN destinos ON viajes.destinoId = destinos.destinoId
-            JOIN empleados ON viajes.empleadoId = empleados.idempleado
-            JOIN categorias ON viajes.categoriaId = categorias.categoriaId
-            JOIN tipoviaje ON viajes.tipoViajeId = tipoviaje.tipoViajeId
-            WHERE viajes.viajeId LIKE '%$f%' OR clientes.idcliente LIKE '%$f%' OR clientes.telefono LIKE '%$f%' OR clientes.DNI LIKE '%$f%'";        
-}
+    CONCAT(clientes.nombre, ' ', clientes.apellido) AS cliente_nombre, 
+    destinos.nombre AS destino_nombre, 
+    CONCAT(empleados.nombre, ' ', empleados.apellidos) AS empleado_nombre, 
+    categorias.nombre AS categoria_nombre, 
+    tipoviaje.nombre AS tipoviaje_nombre, 
+    viajes.fechaSalida, 
+    viajes.fechaRegreso, 
+    viajes.precio
+    FROM viajes
+    JOIN clientes ON viajes.clienteId = clientes.idcliente
+    JOIN destinos ON viajes.destinoId = destinos.destinoId
+    JOIN empleados ON viajes.empleadoId = empleados.idempleado
+    JOIN categorias ON viajes.categoriaId = categorias.categoriaId
+    JOIN tipoviaje ON viajes.tipoViajeId = tipoviaje.tipoViajeId
+    WHERE viajes.viajeId LIKE '%$f%' 
+        OR CONCAT(clientes.nombre, ' ', clientes.apellido) LIKE '%$f%'
+        OR destinos.nombre LIKE '%$f%'
+        OR CONCAT(empleados.nombre, ' ', empleados.apellidos) LIKE '%$f%'
+        OR categorias.nombre LIKE '%$f%'
+        OR tipoviaje.nombre LIKE '%$f%'
+        OR viajes.fechaSalida LIKE '%$f%'
+        OR viajes.fechaRegreso LIKE '%$f%'
+        OR viajes.precio LIKE '%$f%'";   
+        }
 
 
 $resultado = $con->consulta($sql);

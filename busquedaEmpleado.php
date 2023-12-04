@@ -235,7 +235,7 @@
                 <div class="modal-body">
                     
                     <label>Id Empleado:</label>
-                    <input type="text" name="idempleado" id="idempleado" class="d-none form-control">                                
+                    <input type="text" name="idempleado" id="idempleado" class="d-none form-control" readonly>                                
                 
                     <div class="form-group">
                         <label>Ingrese Nombre:</label>

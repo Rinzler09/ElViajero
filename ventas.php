@@ -71,7 +71,7 @@ if(isset($_POST['edit'])) {
 
 if(isset($_POST['del']))
 {
-    $id = $_POST['idViajeDel'];
+    $id = $_POST['idviajeDel'];
 
     $query = "DELETE FROM viajes
     WHERE viajeId = $id";

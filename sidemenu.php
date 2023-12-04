@@ -240,13 +240,6 @@
                     </div>
 
                     <div class="subitem">
-                        <a href="#">     
-                            <div class="icon"><i class="fas fa-chart-bar"></i></div>                                            
-                            <div class="title"><span>Reporte de Viajes</span></div>                    
-                        </a>
-                    </div>
-
-                    <div class="subitem">
                         <a href="reporteEmpleados.php">     
                             <div class="icon"><i class="fas fa-chart-bar"></i></div>                                            
                             <div class="title"><span>Reporte de Empleados</span></div>                    
